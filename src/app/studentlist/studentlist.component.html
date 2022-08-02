@@ -1,0 +1,25 @@
+<div class="table-responsive" >
+    <table class="table table-bordered ">
+      <thead>
+        <tr>
+          <th scope="col">First Name </th>
+          <th scope="col">Last Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let arr of students" >
+            <th style="color: blue;" routerLink="/studentdetail/{{arr.Id}}" >
+                {{arr.FirstName}}
+            </th>
+            <th>
+                {{arr.LastName}}
+            </th>
+        </tr>
+    
+        
+      </tbody>
+    </table>
+    </div>
+    <div class="container">
+        <button routerLink="/booklist">Books List</button>
+    </div>

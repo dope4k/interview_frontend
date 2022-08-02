@@ -1,0 +1,43 @@
+<div class="table-responsive" >
+    <table class="table table-bordered ">
+      <thead>
+        <tr>
+          <th scope="col">Name </th>
+          <th scope="col">Author</th>
+          <th scope="col">Borrowed By</th>
+          <th scope="col">Date Of Borrow</th>
+          <th scope="col">Expected Return Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let arr of allbooks" >
+            <th style="color: blue;" routerLink="/bookdetail/{{arr.Id}}" >
+                {{arr.Name}}
+            </th>
+            <th>
+                {{arr.Author}}
+            </th>
+            <th *ngIf="arr.BorrowedBy!='-'" style="color: blue;">
+                {{arr.BorrowedBy}}
+            </th>
+            <th *ngIf="arr.BorrowedBy=='-'">
+                {{arr.BorrowedBy}}
+            </th>
+            
+            <th>
+                {{arr.DateOfBorrow}}
+            </th>
+            <th>
+                {{arr.ExpectedReturnDate}}
+            </th>
+
+        </tr>
+    
+        
+      </tbody>
+    </table>
+    </div>
+
+    <div class="container">
+        <button routerLink="/studentlist">Students List</button>
+    </div>

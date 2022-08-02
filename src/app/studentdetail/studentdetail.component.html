@@ -1,0 +1,50 @@
+
+<div class="container-flex">
+    <h1 style="padding-left: 200px;">Student Details</h1><button style="margin-left: 800px;" *ngIf="edit==false" (click)="editfunc()">Edit</button>
+        
+    
+        <div *ngIf="edit==false" class="container">
+                <div class="row">
+                    <div class="col-4">
+                        <h3>First Name : </h3>
+                    </div>
+                    <div class="col-4">
+                        <h4>{{First_Name}}</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <h3>Last Name : </h3>
+                    </div>
+                    <div class="col-4">
+                        <h4>{{Last_Name}}</h4>
+                    </div>
+                </div>
+              
+                
+        </div>
+        <div *ngIf="edit==true" class="container">
+            <div class="row">
+                <div class="col-4">
+                    <h3>First Name : </h3>
+                </div>
+                <div class="col-4">
+                    <input type="text" [(ngModel)]="First_Name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <h3>Last Name : </h3>
+                </div>
+                <div class="col-4">
+                    <input type="text" [(ngModel)]="Last_Name">
+                </div>
+            </div>
+           
+            
+    
+    
+        </div>
+        <button style="margin-left: 800px;" *ngIf="edit==true" (click)="donefunc()">Done</button>
+    </div>
+    

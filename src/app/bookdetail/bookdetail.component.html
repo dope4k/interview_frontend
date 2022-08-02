@@ -1,0 +1,99 @@
+
+<div class="container-flex">
+<h1 style="padding-left: 200px;">Book Details</h1><button style="margin-left: 800px;" *ngIf="edit==false" (click)="editfunc()">Edit</button>
+    
+
+    <div *ngIf="edit==false" class="container">
+            <div class="row">
+                <div class="col-4">
+                    <h3>Name : </h3>
+                </div>
+                <div class="col-4">
+                    <h4>{{Name}}</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <h3>Author : </h3>
+                </div>
+                <div class="col-4">
+                    <h4>{{Author}}</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <h3>Borrowed By : </h3>
+                </div>
+                <div class="col-4">
+                    <h4>{{BorrowedBy}}</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <h3>Date Of Borrow : </h3>
+                </div>
+                <div class="col-4">
+                    <h4>{{DateOfBorrow}}</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <h3>Expected Date of Return : </h3>
+                </div>
+                <div class="col-4">
+                    <h4>{{ExpectedReturnDate}}</h4>
+                </div>
+            </div>
+            
+    </div>
+    <div *ngIf="edit==true" class="container">
+        <div class="row">
+            <div class="col-4">
+                <h3>Name : </h3>
+            </div>
+            <div class="col-4">
+                <input type="text" [(ngModel)]="Name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <h3>Author : </h3>
+            </div>
+            <div class="col-4">
+                <input type="text" [(ngModel)]="Author">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <h3>Borrowed By : </h3>
+            </div>
+            <div class="col-4">
+                <!-- <input type="text" > -->
+                <select class="form-control" [(ngModel)]="BorrowedBy">
+                    <option value="" disabled selected>Please select one</option>
+                    <option value="{{tyu.FirstName}} {{tyu.LastName}}" *ngFor="let tyu of students">{{tyu.FirstName}} {{tyu.LastName}}</option>
+                  </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <h3>Date Of Borrow : </h3>
+            </div>
+            <div class="col-4">
+                <input type="text" [(ngModel)]="DateOfBorrow">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <h3>Expected Date of Return : </h3>
+            </div>
+            <div class="col-4">
+                <input type="text" [(ngModel)]="ExpectedReturnDate">
+            </div>
+        </div>
+        
+
+
+    </div>
+    <button style="margin-left: 800px;" *ngIf="edit==true" (click)="donefunc()">Done</button>
+</div>
